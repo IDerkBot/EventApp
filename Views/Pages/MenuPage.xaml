@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="EventApp.Views.Pages.MenuPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MenuPage"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center"
+    d:DesignHeight="250"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+
+    <StackPanel Width="300" Orientation="Vertical">
+        <Button
+            Name="BtnCustomerMovePage"
+            Margin="0,5"
+            Click="BtnCustomerMovePage_OnClick"
+            Content="Клиент" />
+        <Button
+            Name="BtnEquipmentMovePage"
+            Margin="0,5"
+            Click="BtnEquipmentMovePage_OnClick"
+            Content="Оборудование" />
+        <Button
+            Name="BtnTypeEquipmentMovePage"
+            Margin="0,5"
+            Click="BtnTypeEquipmentMovePage_OnClick"
+            Content="Типы оборудования" />
+        <Button
+            Name="BtnEventMovePage"
+            Margin="0,5"
+            Click="BtnEventMovePage_OnClick"
+            Content="Мероприятия" />
+        <Button
+            Name="BtnTypeEventMovePage"
+            Margin="0,5"
+            Click="BtnTypeEventMovePage_OnClick"
+            Content="Типы мероприятий" />
+        <Button
+            Name="BtnUserMovePage"
+            Margin="0,5"
+            Click="BtnUserMovePage_OnClick"
+            Content="Пользователи" />
+    </StackPanel>
+</Page>
