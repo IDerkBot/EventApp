@@ -14,17 +14,29 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <DataGrid
             Name="DGrid"
             AutoGenerateColumns="False"
             IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Equipment.Title}" Header="Оборудование" />
-                <DataGridTextColumn Binding="{Binding Customer.Fullname}" Header="Клиент" />
-                <DataGridTextColumn Binding="{Binding TypeEvent1.Title}" Header="Тип мероприятия" />
-                <DataGridTextColumn Binding="{Binding Date}" Header="Дата мероприятия" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Equipment.Title}"
+                    Header="Оборудование" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Customer.Fullname}"
+                    Header="Клиент" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding TypeEvent1.Title}"
+                    Header="Тип мероприятия" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Date}"
+                    Header="Дата мероприятия" />
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -47,6 +59,7 @@
                 Content="Удалить" />
             <Button
                 Name="BtnAdd"
+                Margin="10"
                 Click="BtnAdd_Click"
                 Content="Добавить" />
         </StackPanel>

@@ -28,14 +28,14 @@ namespace EventApp.Pages.EditPages
 			InitializeComponent();
 			_currentEquipment = new Equipment();
 			DataContext = _currentEquipment;
-			CBTypeEquipment.ItemsSource = EventEntities.GetContext().TypeEquipments.ToList();
+			CbTypeEquipment.ItemsSource = EventEntities.GetContext().TypeEquipments.ToList();
 		}
 		public EquipmentEditPage(Equipment selectedEquipment)
 		{
 			InitializeComponent();
 			_currentEquipment = selectedEquipment;
 			DataContext = _currentEquipment;
-			CBTypeEquipment.ItemsSource = EventEntities.GetContext().TypeEquipments.ToList();
+			CbTypeEquipment.ItemsSource = EventEntities.GetContext().TypeEquipments.ToList();
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)

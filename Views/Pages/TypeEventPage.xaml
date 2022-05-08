@@ -21,7 +21,10 @@
             AutoGenerateColumns="False"
             IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Title}" Header="Название" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Title}"
+                    Header="Название" />
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -44,6 +47,7 @@
                 Content="Удалить" />
             <Button
                 Name="BtnAdd"
+                Margin="10"
                 Click="BtnAdd_Click"
                 Content="Добавить" />
         </StackPanel>
