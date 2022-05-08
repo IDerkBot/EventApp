@@ -11,17 +11,22 @@
     VerticalAlignment="Center"
     d:DesignHeight="150"
     d:DesignWidth="300"
+    Loaded="AuthPage_OnLoaded"
     mc:Ignorable="d">
 
     <StackPanel Width="300">
         <TextBox
-            Name="Login"
+            Name="TbLogin"
             md:HintAssist.Hint="Логин"
             md:HintAssist.IsFloating="True" />
         <PasswordBox
-            Name="Password"
+            Name="PbPassword"
             md:HintAssist.Hint="Пароль"
             md:HintAssist.IsFloating="True" />
+        <CheckBox
+            Name="IsRemember"
+            Margin="10"
+            Content="Запомнить" />
         <Button
             Margin="0,5"
             Click="Auth_Click"
