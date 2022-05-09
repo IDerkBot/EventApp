@@ -1,28 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using EventApp.Models;
 using EventApp.Models.Entity;
 
-namespace EventApp.Pages.EditPages
+namespace EventApp.Views.Pages.EditPages
 {
 	/// <summary>
 	/// Логика взаимодействия для EquipmentEditPage.xaml
 	/// </summary>
 	public partial class EquipmentEditPage : Page
 	{
-		Equipment _currentEquipment;
+		private readonly Equipment _currentEquipment;
 		public EquipmentEditPage()
 		{
 			InitializeComponent();
@@ -45,5 +36,19 @@ namespace EventApp.Pages.EditPages
 			MessageBox.Show("Данные сохранены!");
 			PageManager.GoBack();
 		}
+        private void UIElement_OnDrop(object sender, DragEventArgs e)
+        {
+            SpView.Visibility = Visibility.Collapsed;
+            ImageView.Visibility = Visibility.Visible;
+            var filePath = (string[])e.Data.GetData(DataFormats.FileDrop);
+            if (filePath == null) return;
+            _currentEquipment.Image = File.ReadAllBytes(filePath[0]);
+            var ms = new MemoryStream(_currentEquipment.Image);
+            var source = new BitmapImage();
+            source.BeginInit();
+            source.StreamSource = ms;
+            source.EndInit();
+            ImageView.Source = source;
+        }
 	}
 }

@@ -23,13 +23,10 @@ namespace EventApp.Views.Pages
         private void BtnTypeEquipmentMovePage_OnClick(object sender, RoutedEventArgs e) =>
             PageManager.Navigate(new TypeEquipmentPage());
 
-        private void BtnEventMovePage_OnClick(object sender, RoutedEventArgs e) =>
-            PageManager.Navigate(new EventPage());
-
-        private void BtnTypeEventMovePage_OnClick(object sender, RoutedEventArgs e) =>
-            PageManager.Navigate(new TypeEventPage());
-
         private void BtnUserMovePage_OnClick(object sender, RoutedEventArgs e) =>
             PageManager.Navigate(new UserPage());
-	}
+
+        private void BtnRentMovePage_OnClick(object sender, RoutedEventArgs e) =>
+            PageManager.Navigate(new RentPage());
+    }
 }

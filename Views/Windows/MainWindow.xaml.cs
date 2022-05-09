@@ -1,14 +1,14 @@
-﻿using System;
-using System.Windows;
-using EventApp.Models;
+﻿using EventApp.Models;
 using EventApp.Views.Pages;
+using System;
+using System.Windows;
 
 namespace EventApp.Views.Windows
 {
-	/// <summary>
-	/// Логика взаимодействия для MainWindow.xaml
-	/// </summary>
-	public partial class MainWindow : Window
+    /// <summary>
+    /// Логика взаимодействия для MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
 	{
 		public MainWindow()
 		{

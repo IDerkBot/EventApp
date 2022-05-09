@@ -27,7 +27,7 @@
             Margin="0,5"
             Click="BtnTypeEquipmentMovePage_OnClick"
             Content="Типы оборудования" />
-        <Button
+        <!--<Button
             Name="BtnEventMovePage"
             Margin="0,5"
             Click="BtnEventMovePage_OnClick"
@@ -36,7 +36,12 @@
             Name="BtnTypeEventMovePage"
             Margin="0,5"
             Click="BtnTypeEventMovePage_OnClick"
-            Content="Типы мероприятий" />
+            Content="Типы мероприятий" />-->
+        <Button
+            Name="BtnRentMovePage"
+            Margin="0,5"
+            Click="BtnRentMovePage_OnClick"
+            Content="Аренда" />
         <Button
             Name="BtnUserMovePage"
             Margin="0,5"
