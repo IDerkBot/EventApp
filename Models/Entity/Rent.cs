@@ -12,18 +12,22 @@ namespace EventApp.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class TypeEvent
+    public partial class Rent
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TypeEvent()
+        public Rent()
         {
-            this.Events = new HashSet<Event>();
+            this.Equipments = new HashSet<Equipment>();
         }
     
         public int ID { get; set; }
-        public string Title { get; set; }
+        public int IDCustomer { get; set; }
+        public Nullable<int> CountDay { get; set; }
+        public Nullable<decimal> Sum { get; set; }
+        public Nullable<System.DateTime> DateStart { get; set; }
     
+        public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Event> Events { get; set; }
+        public virtual ICollection<Equipment> Equipments { get; set; }
     }
 }

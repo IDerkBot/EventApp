@@ -17,17 +17,18 @@ namespace EventApp.Models.Entity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Customer()
         {
-            this.Events = new HashSet<Event>();
+            this.Rents = new HashSet<Rent>();
         }
     
         public int ID { get; set; }
         public string Surname { get; set; }
         public string Firstname { get; set; }
         public string Patronymic { get; set; }
+        public string Fullname => $"{Surname} {Firstname} {Patronymic}";
         public string Phone { get; set; }
         public string Email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Event> Events { get; set; }
+        public virtual ICollection<Rent> Rents { get; set; }
     }
 }

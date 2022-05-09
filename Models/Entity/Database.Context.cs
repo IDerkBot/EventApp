@@ -35,9 +35,9 @@ namespace EventApp.Models.Entity
     
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Equipment> Equipments { get; set; }
-        public virtual DbSet<Event> Events { get; set; }
+        public virtual DbSet<Rent> Rents { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TypeEquipment> TypeEquipments { get; set; }
-        public virtual DbSet<TypeEvent> TypeEvents { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
 }

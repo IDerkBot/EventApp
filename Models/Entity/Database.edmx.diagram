@@ -4,17 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ab507cabbafa485db7af35787c933a98" Name="Diagram1">
-        <EntityTypeShape EntityType="EventModel.Customer" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+      <Diagram DiagramId="8ff7a0998d3f408ea9bf8d9e414177d0" Name="Diagram1">
+        <EntityTypeShape EntityType="EventModel.Customer" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="EventModel.Equipment" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="EventModel.Event" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="EventModel.TypeEquipment" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="EventModel.TypeEvent" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="EventModel.User" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="EventModel.FK_Event_Customer" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="EventModel.Rent" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EventModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EventModel.TypeEquipment" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EventModel.User" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="EventModel.FK_Rent_Customer" ManuallyRouted="false" />
         <AssociationConnector Association="EventModel.FK_Equipment_TypeEquipment" ManuallyRouted="false" />
-        <AssociationConnector Association="EventModel.FK_Event_Equipment" ManuallyRouted="false" />
-        <AssociationConnector Association="EventModel.FK_Event_TypeEvent" ManuallyRouted="false" />
+        <AssociationConnector Association="EventModel.EquipmentRent" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

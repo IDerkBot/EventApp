@@ -12,15 +12,12 @@ namespace EventApp.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class Event
+    public partial class sysdiagram
     {
-        public int IDEqupment { get; set; }
-        public int IDCustomer { get; set; }
-        public int TypeEvent { get; set; }
-        public System.DateTime Date { get; set; }
-    
-        public virtual Customer Customer { get; set; }
-        public virtual Equipment Equipment { get; set; }
-        public virtual TypeEvent TypeEvent1 { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

@@ -17,16 +17,19 @@ namespace EventApp.Models.Entity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Equipment()
         {
-            this.Events = new HashSet<Event>();
+            this.Rents = new HashSet<Rent>();
         }
     
         public int ID { get; set; }
         public string Title { get; set; }
         public int Type { get; set; }
-        public Nullable<decimal> Cost { get; set; }
+        public decimal Cost { get; set; }
+        public int CountInStorage { get; set; }
+        public int CountOfRent { get; set; }
+        public byte[] Image { get; set; }
     
         public virtual TypeEquipment TypeEquipment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Event> Events { get; set; }
+        public virtual ICollection<Rent> Rents { get; set; }
     }
 }
