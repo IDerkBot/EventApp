@@ -306,6 +306,7 @@
       <DependentUpon>Database.edmx</DependentUpon>
       <LastGenOutput>Database.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\Resources\Sql\Event - 2019.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets')" />
