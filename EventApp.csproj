@@ -75,6 +75,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\Pages\EditPages\RentEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\RentInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\RentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -106,13 +118,13 @@
     <Compile Include="Models\Entity\Equipment.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entity\Event.cs">
+    <Compile Include="Models\Entity\Rent.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\sysdiagram.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\TypeEquipment.cs">
-      <DependentUpon>Database.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\TypeEvent.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\User.cs">
@@ -120,6 +132,15 @@
     </Compile>
     <Compile Include="Models\FileManager.cs" />
     <Compile Include="Models\PageManager.cs" />
+    <Compile Include="Views\Pages\EditPages\RentEditPage.xaml.cs">
+      <DependentUpon>RentEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\RentInfoPage.xaml.cs">
+      <DependentUpon>RentInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\RentPage.xaml.cs">
+      <DependentUpon>RentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -140,15 +161,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Pages\EditPages\EventEditPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\Pages\EditPages\TypeEquipmentEditPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Pages\EditPages\TypeEventEditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,10 +170,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Pages\EquipmentPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Pages\EventPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,10 +182,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Pages\TypeEquipmentPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Pages\TypeEventPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -198,23 +203,14 @@
     <Compile Include="Views\Pages\EditPages\EquipmentEditPage.xaml.cs">
       <DependentUpon>EquipmentEditPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\EditPages\EventEditPage.xaml.cs">
-      <DependentUpon>EventEditPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Pages\EditPages\TypeEquipmentEditPage.xaml.cs">
       <DependentUpon>TypeEquipmentEditPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Pages\EditPages\TypeEventEditPage.xaml.cs">
-      <DependentUpon>TypeEventEditPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\EditPages\UserEditPage.xaml.cs">
       <DependentUpon>UserEditPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\EquipmentPage.xaml.cs">
       <DependentUpon>EquipmentPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Pages\EventPage.xaml.cs">
-      <DependentUpon>EventPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
@@ -224,9 +220,6 @@
     </Compile>
     <Compile Include="Views\Pages\TypeEquipmentPage.xaml.cs">
       <DependentUpon>TypeEquipmentPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Pages\TypeEventPage.xaml.cs">
-      <DependentUpon>TypeEventPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\UserPage.xaml.cs">
       <DependentUpon>UserPage.xaml</DependentUpon>
@@ -264,10 +257,44 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\Images\NoImage.png" />
+    <Resource Include="Views\Resources\Images\ART-RENTAL-logo.ico" />
+    <Resource Include="Views\Resources\Images\ART RENTAL-logo.png" />
+  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Models\Entity\Database.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -279,8 +306,6 @@
       <DependentUpon>Database.edmx</DependentUpon>
       <LastGenOutput>Database.cs</LastGenOutput>
     </Content>
-    <Resource Include="Views\Resources\Images\ART-RENTAL-logo.ico" />
-    <Resource Include="Views\Resources\Images\ART RENTAL-logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets')" />
