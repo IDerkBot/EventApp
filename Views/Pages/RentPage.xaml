@@ -63,6 +63,11 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <Button
+            Grid.Row="2"
+            HorizontalAlignment="Left"
+            Click="BtnReport_OnClick"
+            Content="Отчет" />
         <StackPanel
             Grid.Row="2"
             HorizontalAlignment="Right"

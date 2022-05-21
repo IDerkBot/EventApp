@@ -4,6 +4,7 @@ using EventApp.Views.Pages.EditPages;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using EventApp.Views.Windows;
 
 namespace EventApp.Views.Pages
 {
@@ -41,5 +42,10 @@ namespace EventApp.Views.Pages
         }
 
         private void BtnMore_OnClick(object sender, RoutedEventArgs e) => PageManager.Navigate(new RentInfoPage((sender as Button)?.DataContext as Rent));
+
+        private void BtnReport_OnClick(object sender, RoutedEventArgs e)
+        {
+            new ReportWindow().Show();
+        }
     }
 }

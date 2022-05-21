@@ -12,7 +12,9 @@ namespace EventApp.Views.Pages
 		public MenuPage()
 		{
 			InitializeComponent();
-		}
+            BtnUserMovePage.Visibility = Data.IsDirector() ? Visibility.Visible : Visibility.Collapsed;
+            BtnTypeEquipmentMovePage.Visibility = Data.IsDirector() ? Visibility.Visible : Visibility.Collapsed;
+        }
 
         private void BtnCustomerMovePage_OnClick(object sender, RoutedEventArgs e) =>
             PageManager.Navigate(new CustomerPage());
@@ -28,5 +30,6 @@ namespace EventApp.Views.Pages
 
         private void BtnRentMovePage_OnClick(object sender, RoutedEventArgs e) =>
             PageManager.Navigate(new RentPage());
+
     }
 }

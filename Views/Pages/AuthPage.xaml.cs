@@ -23,6 +23,7 @@ namespace EventApp.Views.Pages
 
                 if (user.Password == PbPassword.Password)
                 {
+                    Data.Access = user.Access;
                     if (IsRemember.IsChecked == true) FileManager.SetConfig(new Config(user.Login, user.Password, true));
                     PageManager.Navigate(new MenuPage());
 				}
